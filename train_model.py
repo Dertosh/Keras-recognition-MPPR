@@ -50,5 +50,7 @@ print('Test loss:', Score[0])
 print('Test accuracy:', Score[1])
 model.summary()
 print(model.to_json())
+
+#сохранение натренерованной нейронки
 model.save("digits_cls.ckpt")
 
