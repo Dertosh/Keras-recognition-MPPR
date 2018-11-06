@@ -1,4 +1,5 @@
-﻿from keras.datasets import mnist  # subroutines for fetching the MNIST dataset
+﻿# -*- coding: utf-8 -*-
+from keras.datasets import mnist  # subroutines for fetching the MNIST dataset
 # basic class for specifying and training a neural network
 from keras.models import Model
 # the two types of neural network layer we will be using
@@ -6,9 +7,9 @@ from keras.layers import Input, Dense
 # utilities for one-hot encoding of ground truth values
 from keras.utils import np_utils
 
-batch_size = 128  # in each iteration, we consider 128 training examples at once
-num_epochs = 20  # we iterate twenty times over the entire training set
-hidden_size = 512  # there will be 512 neurons in both hidden layers
+batch_size = 128  # количество обучающих образцов, обрабатываемых одновременно за одну итерацию алгоритма градиентного спуска
+num_epochs = 10  # количество итераций обучающего алгоритма по всему обучающему множеству
+hidden_size = 512  # количество нейронов в каждом из двух скрытых слоев MLP
 
 num_train = 60000  # there are 60000 training examples in MNIST
 num_test = 10000  # there are 10000 test examples in MNIST
@@ -49,7 +50,6 @@ Score = model.evaluate(X_test, Y_test, verbose=2)
 print('Test loss:', Score[0])
 print('Test accuracy:', Score[1])
 model.summary()
-print(model.to_json())
 
 #сохранение натренерованной нейронки
 model.save("digits_cls.ckpt")
