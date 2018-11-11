@@ -1,4 +1,4 @@
-# Keras-recognition-MPPR" 
+# Keras-recognition-MPPR
 
 ## Рекомендации
 * Проект лучше запускать в visual code
