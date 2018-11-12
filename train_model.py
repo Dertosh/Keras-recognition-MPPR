@@ -11,7 +11,8 @@ import os
 import sys
 #изменение текущего окружения на окружение скрипта
 pathProgramm = os.path.dirname(sys.argv[0])
-os.chdir(pathProgramm)
+if len(pathProgramm) > 0:
+    os.chdir(pathProgramm)
 
 batch_size = 128  # количество обучающих образцов, обрабатываемых одновременно за одну итерацию алгоритма градиентного спуска
 num_epochs = 10  # количество итераций обучающего алгоритма по всему обучающему множеству
