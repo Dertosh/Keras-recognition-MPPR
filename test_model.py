@@ -13,7 +13,8 @@ from PIL import Image, ImageFilter
 
 #изменение текущего окружения на окружение скрипта
 pathProgramm = os.path.dirname(sys.argv[0])
-os.chdir(pathProgramm)
+if len(pathProgramm) > 0:
+    os.chdir(pathProgramm)
 
 # Запуск сервера
 context = zmq.Context(1)
