@@ -7,6 +7,12 @@ from keras.layers import Input, Dense
 # utilities for one-hot encoding of ground truth values
 from keras.utils import np_utils
 
+import os
+import sys
+#изменение текущего окружения на окружение скрипта
+pathProgramm = os.path.dirname(sys.argv[0])
+os.chdir(pathProgramm)
+
 batch_size = 128  # количество обучающих образцов, обрабатываемых одновременно за одну итерацию алгоритма градиентного спуска
 num_epochs = 10  # количество итераций обучающего алгоритма по всему обучающему множеству
 hidden_size = 512  # количество нейронов в каждом из двух скрытых слоев MLP
